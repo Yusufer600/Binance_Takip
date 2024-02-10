@@ -1,0 +1,222 @@
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+    "symbols": [
+      {
+        "description": "BİNANCE",
+        "proName": "BINANCE:BTCUSDT"
+      },
+      {
+        "description": "ETHEREUM",
+        "proName": "BINANCE:ETHUSDT"
+      },
+      {
+        "description": "RİPPLE",
+        "proName": "BINANCE:XRPUSDT"
+      },
+      {
+        "description": "DOGECOİN",
+        "proName": "BINANCE:DOGEUSDT"
+      }
+    ],
+    "showSymbolLogo": true,
+    "isTransparent": false,
+    "displayMode": "compact",
+    "colorTheme": "dark",
+    "locale": "tr"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>BİNANCE - 30D -</title>
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 3 sütunlu düzen */
+            gap: 3px;
+        }
+        .chart-container {
+            height: 300px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<style>
+    .rounded-button, .wavy-button, .icon-button {
+        margin-top: 10000px; /* Butonların üstünde 20px boşluk oluşturur */
+    }
+
+    .rounded-button {
+        background-color: #4CAF50; /* Yeşil arka plan */
+        border: none;
+        color: white;
+        padding: 7px 14px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 35px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 25px; /* Yuvarlak kenarlar */
+        box-shadow: 0 9px #999; /* Buton altında gölge */
+    }
+    .rounded-button1 {
+        background-color: #eb0606; /* Yeşil arka plan */
+        border: none;
+        color: white;
+        padding: 7px 14px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 35px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 25px; /* Yuvarlak kenarlar */
+        box-shadow: 0 9px #999; /* Buton altında gölge */
+    }
+    
+    .rounded-button:hover {background-color: #45a049}
+
+    .rounded-button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+</style>
+<button onclick="updateCharts(0)" class="rounded-button">Grup 1 </button>
+<button onclick="updateCharts(1)" class="rounded-button1">Grup 2</button>
+<button onclick="updateCharts(2)" class="rounded-button">Grup 3</button>
+<button onclick="updateCharts(3)" class="rounded-button1">Grup 4</button>
+<button onclick="updateCharts(4)" class="rounded-button">Grup 5</button>
+<button onclick="updateCharts(5)" class="rounded-button1">Grup 6</button>
+<button onclick="updateCharts(6)" class="rounded-button">Grup 7</button>
+<button onclick="updateCharts(7)" class="rounded-button1">Grup 8</button>
+<button onclick="updateCharts(8)" class="rounded-button">Grup 9</button>
+<button onclick="updateCharts(9)" class="rounded-button1">Grup 10</button>
+<button onclick="updateCharts(10)" class="rounded-button">Grup 11</button>
+<button onclick="updateCharts(11)" class="rounded-button1">Grup 12</button>
+<button onclick="updateCharts(12)" class="rounded-button">Grup 13</button>
+<button onclick="updateCharts(13)" class="rounded-button1">Grup 14</button>
+<button onclick="updateCharts(14)" class="rounded-button">Grup 15</button>
+<button onclick="updateCharts(15)" class="rounded-button1">Grup 16</button>
+
+</select>
+
+<div class="grid">
+    <div id="widget1" class="chart-container"></div>
+    <div id="widget2" class="chart-container"></div>
+    <div id="widget3" class="chart-container"></div>
+    <div id="widget4" class="chart-container"></div>
+    <div id="widget5" class="chart-container"></div>
+    <div id="widget6" class="chart-container"></div>
+    <div id="widget7" class="chart-container"></div>
+    <div id="widget8" class="chart-container"></div>
+    <div id="widget9" class="chart-container"></div>
+    <div id="widget10" class="chart-container"></div>
+    <div id="widget11" class="chart-container"></div>
+    <div id="widget12" class="chart-container"></div>
+    <div id="widget13" class="chart-container"></div>
+    <div id="widget14" class="chart-container"></div>
+    <div id="widget15" class="chart-container"></div>
+    <div id="widget16" class="chart-container"></div>
+    <div id="widget17" class="chart-container"></div>
+    <div id="widget18" class="chart-container"></div>
+    <div id="widget19" class="chart-container"></div>
+    <div id="widget20" class="chart-container"></div>
+    <div id="widget21" class="chart-container"></div>
+    <div id="widget22" class="chart-container"></div>
+    <div id="widget23" class="chart-container"></div>
+    <div id="widget24" class="chart-container"></div>
+</div>
+
+<script>
+// Gruplara göre coin sembolleri
+const groups = [
+    // Grup 1
+    ['BINANCE:ADAUSDT', 'BINANCE:BCHUSDT', 'BINANCE:BTCUSDT', 'BINANCE:DOTUSDT', 'BINANCE:ETHUSDT', 'BINANCE:LINKUSDT', 'BINANCE:LTCUSDT', 'BINANCE:SOLUSDT', 'BINANCE:XRPUSDT', 'BINANCE:DOCKUSDT', 'BINANCE:USDTRON', 'BINANCE:ETHUPUSDT', 'BINANCE:ONGUSDT', 'BINANCE:IRISUSDT', 'BINANCE:AERGOUSDT', 'BINANCE:NULSUSDT', 'BINANCE:GLMUSDT', 'BINANCE:BIFIUSDT', 'BINANCE:DFUSDT', 'BINANCE:BNBDOWNUSDT', 'BINANCE:USDPUSDT', 'BINANCE:BNBUPUSDT', 'BINANCE:USDTVAI', 'BINANCE:USDTBIDR'],
+    // Grup 2
+    ['BINANCE:ARBUSDT', 'BINANCE:ADAUSDT', 'BINANCE:ORDIUSDT', 'BINANCE:TIAUSDT', 'BINANCE:AVAXUSDT', 'BINANCE:OMUSDT', 'BINANCE:ALTUSDT', 'BINANCE:JUPUSDT', 'BINANCE:SEIUSDT', 'BINANCE:AEURUSDT', 'BINANCE:FIROUSDT', 'BINANCE:CVCUSDT', 'BINANCE:DREPUSDT', 'BINANCE:HARDUSDT', 'BINANCE:VITEUSDT', 'BINANCE:EPXUSDT', 'BINANCE:REIUSDT', 'BINANCE:WNXMUSDT', 'BINANCE:FRONTUSDT', 'BINANCE:VANRYUSDT', 'BINANCE:OMGUSDT', 'BINANCE:LPTUSDT', 'BINANCE:BADGERUSDT', 'BINANCE:BATUSDT'],
+    // Grup 3
+    ['BINANCE:IDUSDT', 'BINANCE:SUIUSDT', 'BINANCE:STXUSDT', 'BINANCE:OPUSDT', 'BINANCE:MATICUSDT', 'BINANCE:INJUSDT', 'BINANCE:NEARUSDT', 'BINANCE:RUNEUSDT', 'BINANCE:TRXUSDT', 'BINANCE:XVSUSDT', 'BINANCE:ONTUSDT', 'BINANCE:AKROUSDT', 'BINANCE:SUNUSDT', 'BINANCE:BTCDOWNUSDT', 'BINANCE:SFPUSDT', 'BINANCE:ERNUSDT', 'BINANCE:VTHOUSDT', 'BINANCE:XEMUSDT', 'BINANCE:DODOUSDT', 'BINANCE:STRAXUSDT', 'BINANCE:BTCUPUSDT', 'BINANCE:PORTOUSDT', 'BINANCE:ARDRUSDT', 'BINANCE:CITYUSDT'],
+    // Grup 4
+    ['BINANCE:PENDLEUSDT', 'BINANCE:DOTUSDT', 'BINANCE:DOGEUSDT', 'BINANCE:XAIUSDT', 'BINANCE:ENSUSDT', 'BINANCE:ICPUSDT', 'BINANCE:CFXUSDT', 'BINANCE:1000SATSUSDT', 'BINANCE:AIUSDT', 'BINANCE:PUNDIXUSDT', 'BINANCE:PNTUSDT', 'BINANCE:PSGUSDT', 'BINANCE:FORTHUSDT', 'BINANCE:STEEMUSDT', 'BINANCE:DEXEUSDT', 'BINANCE:PLAUSDT', 'BINANCE:AVAUSDT', 'BINANCE:ASRUSDT','BINANCE:KMDUSDT', 'BINANCE:MLNUSDT', 'BINANCE:QKCUSDT', 'BINANCE:ETHDOWNUSDT', 'BINANCE:UTKUSDT', 'BINANCE:VICUSDT'],
+    // Grup 5
+    ['BINANCE:BTTCUSDT', 'BINANCE:TUSDUSDT', 'BINANCE:BLURUSDT', 'BINANCE:LTCUSDT', 'BINANCE:RNDRUSDT', 'BINANCE:SHIBUSDT', 'BINANCE:ETCUSDT', 'BINANCE:FILUSDT', 'BINANCE:AAVEUSDT', 'BINANCE:BETAUSDT', 'BINANCE:GHSTUSDT', 'BINANCE:STPTUSDT', 'BINANCE:XNOUSDT', 'BINANCE:ADXUSDT', 'BINANCE:WANUSDT', 'BINANCE:LTOUSDT', 'BINANCE:SCRTUSDT', 'BINANCE:HIVEUSDT', 'BINANCE:VOXELUSDT', 'BINANCE:FLMUSDT', 'BINANCE:TFUELUSDT', 'BINANCE:AUDIOUSDT', 'BINANCE:TUSDTRY', 'BINANCE:ATMUSDT'],
+    // Grup 6
+    ['BINANCE:ATOMUSDT', 'BINANCE:XMRUSDT', 'BINANCE:LUNCUSDT', 'BINANCE:EURUSDT', 'BINANCE:RONINUSDT', 'BINANCE:LDOUSDT', 'BINANCE:HBARUSDT', 'BINANCE:DYDXUSDT', 'BINANCE:PYTHUSDT', 'BINANCE:IQUSDT', 'BINANCE:JUVUSDT', 'BINANCE:MBLUSDT', 'BINANCE:GNOUSDT', 'BINANCE:ACMUSDT', 'BINANCE:OOKIUSDT', 'BINANCE:POLSUSDT', 'BINANCE:OAXUSDT', 'BINANCE:PROMUSDT', 'BINANCE:DATAUSDT', 'BINANCE:GMXUSDT', 'BINANCE:TLMUSDT', 'BINANCE:SXPUSDT', 'BINANCE:HIGHUSDT', 'BINANCE:SCUSDT'],
+    // Grup 7
+    ['BINANCE:APTUSDT', 'BINANCE:GALAUSDT', 'BINANCE:API3USDT', 'BINANCE:PEOPLEUSDT', 'BINANCE:MAVUSDT', 'BINANCE:BONKUSDT', 'BINANCE:FTMUSDT', 'BINANCE:TRBUSDT', 'BINANCE:EGLDUSDT', 'BINANCE:HIFIUSDT', 'BINANCE:CHESSUSDT', 'BINANCE:FUNUSDT', 'BINANCE:REQUSDT', 'BINANCE:ELFUSDT', 'BINANCE:FISUSDT', 'BINANCE:GFTUSDT', 'BINANCE:VIBUSDT', 'BINANCE:CREAMUSDT', 'BINANCE:CYBERUSDT', 'BINANCE:MANAUSDT', 'BINANCE:AGIXUSDT', 'BINANCE:SUPERUSDT', 'BINANCE:RDNTUSDT', 'BINANCE:YGGUSDT'],
+    // Grup 8
+    ['BINANCE:FXSUSDT', 'BINANCE:ROSEUSDT', 'BINANCE:CHZUSDT', 'BINANCE:UMAUSDT', 'BINANCE:JTOUSDT', 'BINANCE:MAGICUSDT', 'BINANCE:BAKEUSDT', 'BINANCE:CTSIUSDT', 'BINANCE:LUNAUSDT', 'BINANCE:BARUSDT', 'BINANCE:WRXUSDT', 'BINANCE:TROYUSDT', 'BINANCE:BNXUSDT', 'BINANCE:BALUSDT', 'BINANCE:BELUSDT', 'BINANCE:LAZIOUSDT', 'BINANCE:FARMUSDT', 'BINANCE:PIVXUSDT', 'BINANCE:HOOKUSDT', 'BINANCE:ILVUSDT', 'BINANCE:PHBUSDT', 'BINANCE:EOSUSDT', 'BINANCE:COMPUSDT', 'BINANCE:WOOUSDT'],
+    // Grup 9
+    ['BINANCE:BCHUSDT', 'BINANCE:PEPEUSDT', 'BINANCE:MINAUSDT', 'BINANCE:WLDUSDT', 'BINANCE:BEAMXUSDT', 'BINANCE:IMXUSDT', 'BINANCE:APEUSDT', 'BINANCE:FETUSDT', 'BINANCE:AMBUSDT', 'BINANCE:SPELLUSDT', 'BINANCE:BNTUSDT', 'BINANCE:MTLUSDT', 'BINANCE:ALCXUSDT', 'BINANCE:RPLUSDT', 'BINANCE:CLVUSDT', 'BINANCE:SYSUSDT', 'BINANCE:DIAUSDT', 'BINANCE:PROSUSDT', 'BINANCE:AGLDUSDT', 'BINANCE:NEOUSDT', 'BINANCE:THETAUSDT', 'BINANCE:1INCHUSDT', 'BINANCE:QNTUSDT', 'BINANCE:GASUSDT'],
+    // Grup 10
+    ['BINANCE:ACAUSDT', 'BINANCE:AUCTIONUSDT', 'BINANCE:AXSUSDT', 'BINANCE:ACEUSDT', 'BINANCE:NFPUSDT', 'BINANCE:XECUSDT', 'BINANCE:CHRUSDT', 'BINANCE:SNXUSDT', 'BINANCE:CAKEUSDT', 'BINANCE:COMBOUSDT', 'BINANCE:LOKAUSDT', 'BINANCE:QTUMUSDT', 'BINANCE:CVPUSDT', 'BINANCE:ALPACAUSDT', 'BINANCE:IOSTUSDT', 'BINANCE:FORUSDT', 'BINANCE:DCRUSDT', 'BINANCE:DGBUSDT', 'BINANCE:JSTUSDT', 'BINANCE:TKOUSDT', 'BINANCE:GALUSDT', 'BINANCE:ARUSDT', 'BINANCE:ASTUSDT', 'BINANCE:BANDUSDT'],
+    // Grup 11
+    ['BINANCE:ARKMUSDT', 'BINANCE:FTTUSDT', 'BINANCE:GMTUSDT', 'BINANCE:RLCUSDT', 'BINANCE:GRTUSDT', 'BINANCE:NMRUSDT', 'BINANCE:UNIUSDT', 'BINANCE:SANDUSDT', 'BINANCE:KAVAUSDT', 'BINANCE:GNSUSDT', 'BINANCE:BURGERUSDT', 'BINANCE:SANTOSUSDT', 'BINANCE:MOBUSDT', 'BINANCE:KEYUSDT', 'BINANCE:MDXUSDT', 'BINANCE:SNTUSDT', 'BINANCE:ALPINEUSDT', 'BINANCE:RAREUSDT', 'BINANCE:CELOUSDT', 'BINANCE:OCEANUSDT', 'BINANCE:LRCUSDT', 'BINANCE:LQTYUSDT', 'BINANCE:KLAYUSDT', 'BINANCE:SLPUSDT'],
+    // Grup 12
+    ['BINANCE:MOVRUSDT', 'BINANCE:MEMEUSDT', 'BINANCE:NTRNUSDT', 'BINANCE:IOTAUSDT', 'BINANCE:CRVUSDT', 'BINANCE:FLOWUSDT', 'BINANCE:HOTUSDT', 'BINANCE:SSVUSDT', 'BINANCE:ALGOUSDT', 'BINANCE:DARUSDT', 'BINANCE:FIOUSDT', 'BINANCE:RENUSDT', 'BINANCE:ALICEUSDT', 'BINANCE:CVXUSDT', 'BINANCE:KNCUSDT', 'BINANCE:ATAUSDT', 'BINANCE:AMPUSDT', 'BINANCE:PHAUSDT', 'BINANCE:ZILUSDT', 'BINANCE:RADUSDT', 'BINANCE:PERPUSDT', 'BINANCE:KDAUSDT', 'BINANCE:ZECUSDT', 'BINANCE:ORNUSDT'],
+    // Grup 13
+    ['BINANCE:RAYUSDT', 'BINANCE:STORJUSDT', 'BINANCE:COTIUSDT', 'BINANCE:ASTRUSDT', 'BINANCE:VETUSDT', 'BINANCE:MASKUSDT', 'BINANCE:CKBUSDT', 'BINANCE:LSKUSDT', 'BINANCE:CTXCUSDT', 'BINANCE:VIDTUSDT', 'BINANCE:WBETHUSDT', 'BINANCE:REEFUSDT', 'BINANCE:POLYXUSDT', 'BINANCE:VGXUSDT', 'BINANCE:NKNUSDT', 'BINANCE:WINGUSDT', 'BINANCE:ICXUSDT', 'BINANCE:LITUSDT', 'BINANCE:MBOXUSDT', 'BINANCE:UFTUSDT', 'BINANCE:ANKRUSDT', 'BINANCE:XTZUSDT', 'BINANCE:ANTUSDT', 'BINANCE:TWTUSDT'],
+    // Grup 14
+    ['BINANCE:DUSKUSDT', 'BINANCE:OSMOUSDT', 'BINANCE:MKRUSDT', 'BINANCE:XLMUSDT', 'BINANCE:EDUUSDT', 'BINANCE:KSMUSDT', 'BINANCE:STGUSDT', 'BINANCE:SYNUSDT', 'BINANCE:PONDUSDT', 'BINANCE:RSRUSDT', 'BINANCE:IDEXUSDT', 'BINANCE:NEXOUSDT', 'BINANCE:FLUXUSDT', 'BINANCE:MDTUSDT', 'BINANCE:QUICKUSDT', 'BINANCE:XVGUSDT', 'BINANCE:BONDUSDT', 'BINANCE:RVNUSDT', 'BINANCE:LOOMUSDT', 'BINANCE:ZENUSDT', 'BINANCE:ONEUSDT', 'BINANCE:WINUSDT', 'BINANCE:POWRUSDT', 'BINANCE:ENJUSDT'],
+    // Grup 15
+    ['BINANCE:OGUSDT', 'BINANCE:CTKUSDT', 'BINANCE:TUSDT', 'BINANCE:TRUUSDT', 'BINANCE:ARKUSDT', 'BINANCE:JOEUSDT', 'BINANCE:UNFIUSDT', 'BINANCE:QIUSDT', 'BINANCE:BICOUSDT', 'BINANCE:OXTUSDT', 'BINANCE:BLZUSDT', 'BINANCE:DENTUSDT', 'BINANCE:WAXPUSDT', 'BINANCE:ZRXUSDT', 'BINANCE:BSWUSDT', 'BINANCE:DEGOUSDT', 'BINANCE:COSUSDT', 'BINANCE:ALPHAUSDT', 'BINANCE:USTCUSDT', 'BINANCE:GTCUSDT', 'BINANCE:MULTIUSDT', 'BINANCE:WAVESUSDT', 'BINANCE:LINAUSDT', 'BINANCE:C98USDT'],
+    // Grup 16
+    ['BINANCE:JASMYUSDT', 'BINANCE:FDUSDTRY', 'BINANCE:WBTCUSDT', 'BINANCE:GLMRUSDT', 'BINANCE:CELRUSDT', 'BINANCE:RIFUSDT', 'BINANCE:SKLUSDT', 'BINANCE:ACHUSDT', 'BINANCE:USDTDAI', 'BINANCE:IOTXUSDT', 'BINANCE:HFTUSDT', 'BINANCE:FLOKIUSDT', 'BINANCE:ARPAUSDT', 'BINANCE:STMXUSDT', 'BINANCE:LEVERUSDT', 'BINANCE:SUSHIUSDT', 'BINANCE:OGNUSDT', 'BINANCE:PAXGUSDT', 'BINANCE:DASHUSDT', 'BINANCE:YFIUSDT', 'BINANCE:PYRUSDT', 'BINANCE:FIDAUSDT', 'BINANCE:KP3RUSDT']
+    
+];
+function loadTradingViewWidget(containerId, symbol) {
+    // TradingView widget'ını yükleme fonksiyonu
+    new TradingView.widget({
+        "autosize": true,
+        "symbol": symbol,
+        "interval": "30",
+        "timezone": "Europe/Istanbul",
+        "container_id": containerId,
+        "theme": "Dark",
+        "style": "1",
+        "locale": "tr",
+        "toolbar_bg": "rgba(238, 238, 238, 1)",
+        "enable_publishing": false,
+        "hide_side_toolbar": false,
+        "allow_symbol_change": true,
+        "show_popup_button": true,
+        "hide_volume": true,
+	"studies": [
+    	"STD;Bollinger_Bands"
+  		]
+    });
+}
+function updateCharts(selectedIndex) {
+    const selectedGroup = groups[selectedIndex];
+    for (let i = 0; i < 24; i++) {
+        const symbol = selectedGroup[i] || "BINANCE:BTCUSDT";
+        loadTradingViewWidget(`widget${i + 1}`, symbol);
+    }
+    // Sayfa başlığını güncelle
+    document.title = `BİNANCE - 30D - Grup ${selectedIndex + 1}`;
+}
+
+window.onload = function() {
+    const params = new URLSearchParams(window.location.search);
+    const groupIndex = params.get('group') ? parseInt(params.get('group')) : 0;
+    updateCharts(groupIndex); // Burada varsayılan grup 0 olarak ayarlanmıştır
+};
+</script>
+
+</body>
+</html>
